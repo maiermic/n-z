@@ -1,4 +1,7 @@
 function n-z() {
+    local NLIST_START_IN_SEARCH_MODE=1
+    local NLIST_START_IN_UNIQ_MODE=1
+
     emulate -L zsh
 
     setopt extendedglob pushdignoredups
@@ -60,6 +63,9 @@ function n-z() {
     else
         [ "${(t)CURSOR}" = "integer-local-special" ] && zle redisplay
     fi
+
+    unset NLIST_START_IN_SEARCH_MODE
+    unset NLIST_START_IN_UNIQ_MODE
 }
 
 # vim: set filetype=zsh:
